@@ -8,10 +8,49 @@ Version: 0.1
 Author URI: http://mahlad.ir
 */
 add_action('admin_menu','register_custom_menu');
-function register_custom_menu(){
-	add_menu_page('تماس با ما', 'تماس با ما', '8', 'contact', 'save_contact_form', plugins_url('wpclass-20121111/images/icon.png'),'26');
+add_action('init','register_shortcode_menu');
+function register_shortcode_menu(){
+	add_shortcode('contact','user_contact_form');
 }
-function save_contact_form(){
+//  		[contact title=تماس با ما id=1] محتوا [/contact]
+//			[contact]
+function user_contact_form($atts, $content = null){
+	if(isset($_POST['usr_submit'])){
+		echo 'yes';
+	}
+	$userData='
+	<table>
+		<caption>فرم ارسال نظر کاربر</caption>
+		<form action="" method="post">
+		<tr>
+			<td><label for="usr_name">نام و نام خانوادگی:</label></td>
+			<td><input type="text" name="usr_name" value="" /></td>
+		</tr>
+		<tr>
+			<td><label for="usr_email">ایمیل:</label></td>
+			<td><input type="text" name="usr_email" value="" /></td>
+		</tr>
+		<tr>
+			<td><label for="usr_title">موضوع:</label></td>
+			<td><input type="text" name="usr_title" value="" /></td>
+		</tr>
+		<tr>
+			<td><label for="usr_content">محتوا:</label></td>
+			<td><textarea name="usr_content"></textarea></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="usr_submit" value="ارسال"></td>
+		</tr>
+		</form>
+	</table>
+	';
+	return $userData;
+}
+function register_custom_menu(){
+	add_menu_page('تماس با ما', 'تماس با ما', '8', 'contact', 'admin_contact_form', plugins_url('wpclass-20121111/images/icon.png'),'26');
+}
+function admin_contact_form(){
 	if(isset($_POST['adm_submit'])){
 		update_option('adm_title',$_POST['adm_title']);
 		update_option('adm_email',$_POST['adm_email']);
@@ -26,7 +65,7 @@ function save_contact_form(){
 		<form action="" method="post">
 			<tr>
 				<td>
-					<label>ایمیل گیرنده:</label>
+					<label for="adm_email">ایمیل گیرنده:</label>
 				</td>
 				<td>
 					<input type="text" name="adm_email" value="<?php echo $adm_email; ?>"/>
@@ -34,7 +73,7 @@ function save_contact_form(){
 			</tr>
 			<tr>
 				<td>
-					<label>عنوان ایمیل های دریافتی:</label>
+					<label for="adm_title">عنوان ایمیل های دریافتی:</label>
 				</td>
 				<td>
 					<input type="text" name="adm_title" value="<?php echo $adm_title ?>"/>
@@ -42,7 +81,7 @@ function save_contact_form(){
 			</tr>
 			<tr>
 				<td>
-					<label>قالب html:</label>
+					<label for="adm_html">قالب html:</label>
 				</td>
 				<td>
 					<textarea cols="100" rows="10" name="adm_html"><?php echo $adm_html; ?></textarea>
