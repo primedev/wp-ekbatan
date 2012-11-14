@@ -16,7 +16,23 @@ function register_shortcode_menu(){
 //			[contact]
 function user_contact_form($atts, $content = null){
 	if(isset($_POST['usr_submit'])){
-		echo 'yes';
+		$usr_name=$_POST['usr_name'];
+		$usr_title=$_POST['usr_title'];
+		$usr_email=$_POST['usr_email'];
+		$usr_content=$_POST['usr_content'];
+		$to=get_option('adm_email');
+		$adm_title=get_option('adm_title');
+		$adm_html=str_replace(array('\"',"\'"),array('"',"'"),get_option('adm_html'));
+		add_filter('wp_mail_from',create_function('', 'return "'.$usr_email.'";'));
+		add_filter('wp_mail_from_name',create_function('', 'return "'.$usr_name.'";'));
+		add_filter('wp_mail_content_type',create_function('', 'return "text/html";'));
+		$subject=$usr_title.$adm_title;
+		$mail_content = str_replace(array('%name%','%email%','%subject%','%content%'),array($usr_name,$usr_email,$subject,$usr_content),$adm_html);
+		
+		
+		wp_mail( $to, $subject, $mail_content );
+		echo "sent successfully"; 
+	
 	}
 	$userData='
 	<table>
