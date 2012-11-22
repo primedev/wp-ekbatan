@@ -27,7 +27,7 @@ function user_contact_form($atts, $content = null){
 		add_filter('wp_mail_from_name',create_function('', 'return "'.$usr_name.'";'));
 		add_filter('wp_mail_content_type',create_function('', 'return "text/html";'));
 		$subject=$usr_title.$adm_title;
-		$mail_content = str_replace(array('%name%','%email%','%subject%','%content%'),array($usr_name,$usr_email,$subject,$usr_content),$adm_html);
+		$mail_content = str_replace(array('%name%','%email%','%subject%','%content%'),array($usr_name,$usr_email,$usr_title,$usr_content),$adm_html);
 		
 		
 		wp_mail( $to, $subject, $mail_content );
