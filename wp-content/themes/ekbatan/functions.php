@@ -1,4 +1,6 @@
 <?php
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'menus' );
 /*_-_-_-_-Marketting post type_-_-_-_-*/ 
 add_action('init','create_marketting_type');
 function create_marketting_type(){
@@ -67,7 +69,7 @@ function create_gallery_type(){
 		'menu_position' => 25,
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'supports' => array('title','editor'),
+		'supports' => array('title','editor','thumbnail'),
 		'has_archive' => true,
 		'rewrite' => array('slug'=>'gallery'),
 		'query_var' => true,
@@ -173,10 +175,95 @@ $args=array(
 	'public' => true,
 	'show_in_nav_menus' => true,
 	'show_ui' => true,
-	'hierarchical' => false,
+	'hierarchical' => true,
 	'query_var' => true,
 	
 
 	);
-register_taxonomy('دپارتمان', array('services','gallery'), $args);
+register_taxonomy('department', array('services','gallery'), $args);
+/*_-_-_-_-Category taxonomy_-_-_-_-*/ 
+$labels = array(
+    'name'  => 'مجموعه گالری',
+    'singular_name'  => 'مجموعه گالری ها',
+    'search_items'  => 'جستجوی مجموعه گالری',
+    'popular_items'  => 'بیشتر استفاده شده',
+    'all_items'  => 'تمام مجموعه گالری',
+    'parent_item'  => 'مادر مجموعه گالری',
+    'edit_item'  => 'ویرایش مجموعه گالری',
+    'update_item'  => 'بروزرسانی مجموعه گالری',
+    'add_new_item'  => 'افزودن مجموعه گالری جدید',
+    'new_item_name'    => 'مجموعه گالری جدید',
+    'separate_items_with_commas'  => 'مجموعه گالری ها را با کاما جدا کنید',
+    'add_or_remove_items'  => 'افزودن یا حذف مجموعه گالری',
+    'choose_from_most_used'  => 'انتخاب از محبوبها'
+);
+$args=array(
+	'label' => 'catGalery',
+	'labels' =>$labels,
+	'public' => true,
+	'show_in_nav_menus' => true,
+	'show_ui' => true,
+	'hierarchical' => true,
+	'query_var' => true,
+	
+
+	);
+register_taxonomy('catGalery', array('gallery'), $args);
+/*_-_-_-_-Upload metabox_-_-_-_-*/ 
+add_action('post_edit_form_tag', 'update_edit_form'); 
+add_action('load-post.php', 'metabox_setup' );
+add_action('load-post-new.php', 'metabox_setup' );
+add_action('save_post', 'metabox_save', 10, 2 );
+
+
+function update_edit_form() {  
+    echo ' enctype="multipart/form-data"';  
+}
+
+function metabox_setup() {
+	add_meta_box(
+		'gsp_post_meta2',
+		'فایل متن کامل',	
+		'metabox_content',		
+		'articles',				
+		'side',		
+		'high'	
+	);
+
+}
+
+function metabox_content($post){
+	$profile_picture =  get_post_meta( $post->ID, 'profile_picture', true );
+	if($profile_picture['url']){
+		$img = $profile_picture['url'];
+		echo '<div id="profile_picture"><a href="'.$img.'" target="_blank"><img src="'.$img.'"></a>
+		</div>
+		<br />';	
+	}
+
+?>
+	<input id="wp_custom_attachment" name="wp_custom_attachment" value="بارگزاری" size="25" type="file">
+ <?php
+}
+
+
+function metabox_save($post_id){
+	if(!empty($_FILES['wp_custom_attachment']['name'])) {	
+		$supported_types = array('image/gif','image/bmp','image/jpeg','image/png','application/pdf','application/msword');  		
+		$arr_file_type = wp_check_filetype(basename($_FILES['wp_custom_attachment']['name']));  
+		$uploaded_type = $arr_file_type['type'];  
+		if(in_array($uploaded_type, $supported_types)) {  
+			$upload = wp_upload_bits($_FILES['wp_custom_attachment']['name'], null, file_get_contents($_FILES['wp_custom_attachment']['tmp_name'])); 
+			if(isset($upload['error']) && $upload['error'] != 0) {  
+				//wp_die('There was an error uploading your file. The error is: ' . $upload['error']);  
+			} else {
+				unset($upload['error']);
+				$upload['file'] = str_replace(chr(92),"/",$upload['file']);
+				update_post_meta($post_id ,'profile_picture', $upload);  
+			}
+		} else {
+			//wp_die("The file type that you've uploaded is not a PDF.");  
+		}
+	} 
+}
  ?>

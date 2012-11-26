@@ -6,3 +6,73 @@ Description: Wordpress Theme for Ekbatan and kanoon corporation
 Version: 0.1
 Tags:ekbatan,kanoon
 */
+*{
+	margin:0;
+	padding:0;
+	border:0;	
+}
+
+div.banner{
+	position:relative;
+	margin:50px auto 0;
+	width:750px; 
+	height: 500px;
+}
+div.banner ul{
+	margin-top:10px;	
+}
+div.banner ul li{
+	display:block;
+	position:absolute;
+}
+div.banner ul li img{
+	display:block;
+	-webkit-transition:all 0.5s;
+	-moz-transition:all 0.5s;
+	-ms-transition:all 0.5s;
+	-o-transition:all 0.5s;
+	transition:all 0.5s;
+}
+
+div.banner ul li img:hover{
+	-webkit-transform: scale(1.1,1.1);
+	-moz-transform: scale(1.5,1.5);
+	-ms-transform: scale(1.5,1.5);
+	-o-transform: scale(1.5,1.5);
+	transform: scale(1.1,1.1);
+}
+div.banner .next{
+	width:40px;
+	height:40px;
+	display:block;
+	cursor: pointer;
+	position:absolute;
+	right:0;
+	top:110px;
+	background-image:url('images/image-setgallery/next.png');
+	background-repeat:no-repeat;
+}
+
+div.banner .back{
+	width:40px;
+	height:40px;
+	display:block;
+	cursor: pointer;
+	position:absolute;
+	left:0;
+	top:110px;
+	background-image:url('images/image-setgallery/prev.png');
+	background-repeat:no-repeat;
+}
+
+div.banner .ngallery{
+	left: 150px !important;
+	top: -48px !important;
+	background-image:url('images/image-setgallery/gallery-nxt.png') !important;
+}
+
+div.banner .pgallery{
+	left: 70px;
+	top: 830px;
+	background-image:url('images/image-setgallery/gallery-prv.png') !important;
+}
