@@ -31,12 +31,13 @@ function user_contact_form($atts, $content = null){
 		
 		
 		wp_mail( $to, $subject, $mail_content );
+		if(wp_mail( $to, $subject, $mail_content ))
 		echo "sent successfully"; 
 	
 	}
 	$userData='
 	<table>
-		<caption>فرم ارسال نظر کاربر</caption>
+		
 		<form action="" method="post">
 		<tr>
 			<td><label for="usr_name">نام و نام خانوادگی:</label></td>
@@ -64,7 +65,7 @@ function user_contact_form($atts, $content = null){
 	return $userData;
 }
 function register_custom_menu(){
-	add_menu_page('تماس با ما', 'تماس با ما', '8', 'contact', 'admin_contact_form', plugins_url('wpclass-20121111/images/icon.png'),'26');
+	add_menu_page('تماس با ما', 'تماس با ما', '8', 'contact', 'admin_contact_form', plugins_url('wpclass-20121111/images/icon.png'),'31');
 }
 function admin_contact_form(){
 	if(isset($_POST['adm_submit'])){
