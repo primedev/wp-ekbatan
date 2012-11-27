@@ -41,6 +41,6 @@ $_SESSION['term_slug']='ekbatan';
 				</div>
 			</div>
 <?php 
-include 'contact.php';
+include 'single.php';
 get_footer();
  ?>

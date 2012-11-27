@@ -43,6 +43,6 @@ include 'general-button.php';
 			</div>
 <?php 
 
-include 'contact.php';
+include 'single.php';
 get_footer();
  ?>
