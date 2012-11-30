@@ -38,19 +38,4 @@
 				</div>
 				
 			</div>
-			<li>
-				<div class="header-bg">
-					<div class="header-txt cover">
-						<div class="header-icon">
-							<img src="<?php bloginfo('template_url'); ?>/images/icon_digitalart.png" alt="title" width="30" height="30" />
-						</div>
-						<div class="header-title">ایده ها</div>
-					</div>
-				</div>
-			</li>
-			<div class="content">
-				<div class="txt">
-					سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام سلام 
-				</div>
-			</div>
-		
+			

@@ -23,6 +23,23 @@ $_SESSION['term_slug']='ekbatan';
 					 ?>
 				</div>
 			</div>
+						<li>
+				<div class="header-bg">
+					<div class="header-txt cover">
+						<div class="header-icon">
+							<img src="<?php bloginfo('template_url'); ?>/images/icon_digitalart.png" alt="title" width="30" height="30" />
+						</div>
+						<div class="header-title">ایده ها</div>
+					</div>
+				</div>
+			</li>
+			<div class="content">
+				<div class="txt">
+					<?php 
+					include 'single-coments.php';
+					 ?>
+				</div>
+			</div>
 			<li>
 				<div class="header-bg">
 					<div class="header-txt cover">
@@ -40,7 +57,9 @@ $_SESSION['term_slug']='ekbatan';
 					?>
 				</div>
 			</div>
+
+		
 <?php 
-include 'single.php';
+include 'contact.php';
 get_footer();
  ?>
