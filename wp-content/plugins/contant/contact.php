@@ -17,7 +17,10 @@ function register_shortcode_menu(){
 function user_contact_form($atts, $content = null){
 	if(isset($_POST['usr_submit'])){
 		$usr_name=$_POST['usr_name'];
+		if(isset($_POST['usr_title']))
 		$usr_title=$_POST['usr_title'];
+	else 
+		$usr_title='';
 		$usr_email=$_POST['usr_email'];
 		$usr_content=$_POST['usr_content'];
 		$to=get_option('adm_email');
@@ -36,31 +39,19 @@ function user_contact_form($atts, $content = null){
 	
 	}
 	$userData='
-	<table>
 		
 		<form action="" method="post">
-		<tr>
-			<td><label for="usr_name">نام و نام خانوادگی:</label></td>
-			<td><input type="text" name="usr_name" value="" /></td>
-		</tr>
-		<tr>
-			<td><label for="usr_email">ایمیل:</label></td>
-			<td><input type="text" name="usr_email" value="" /></td>
-		</tr>
-		<tr>
-			<td><label for="usr_title">موضوع:</label></td>
-			<td><input type="text" name="usr_title" value="" /></td>
-		</tr>
-		<tr>
-			<td><label for="usr_content">محتوا:</label></td>
-			<td><textarea name="usr_content"></textarea></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><input type="submit" name="usr_submit" value="ارسال"></td>
-		</tr>
+			<label for="usr_name"></label>
+			<input class="name" type="text" name="usr_name" value="" />
+			<label for="usr_email"></label>
+			<input class="email"type="text" name="usr_email" value="" />
+		
+			<label for="usr_content"></label></td>
+			<textarea class="textarea"name="usr_content"></textarea>
+			<input type="submit" name="usr_submit" value="ارسال">
+		
 		</form>
-	</table>
+	
 	';
 	return $userData;
 }
