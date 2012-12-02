@@ -145,7 +145,7 @@ function create_articles_type(){
 		'menu_position' => 25,
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'supports' => array('title','editor','excerpt','comments'),
+		'supports' => array('title','editor','comments'),
 		'has_archive' => true,
 		'rewrite' => array('slug'=>'articles'),
 		'query_var' => true,
@@ -180,35 +180,35 @@ $args=array(
 	
 
 	);
-register_taxonomy('department', array('services','gallery'), $args);
+register_taxonomy('department', array('services','gallery','articles'), $args);
 /*_-_-_-_-Category taxonomy_-_-_-_-*/ 
-$labels = array(
-    'name'  => 'مجموعه گالری',
-    'singular_name'  => 'مجموعه گالری ها',
-    'search_items'  => 'جستجوی مجموعه گالری',
-    'popular_items'  => 'بیشتر استفاده شده',
-    'all_items'  => 'تمام مجموعه گالری',
-    'parent_item'  => 'مادر مجموعه گالری',
-    'edit_item'  => 'ویرایش مجموعه گالری',
-    'update_item'  => 'بروزرسانی مجموعه گالری',
-    'add_new_item'  => 'افزودن مجموعه گالری جدید',
-    'new_item_name'    => 'مجموعه گالری جدید',
-    'separate_items_with_commas'  => 'مجموعه گالری ها را با کاما جدا کنید',
-    'add_or_remove_items'  => 'افزودن یا حذف مجموعه گالری',
-    'choose_from_most_used'  => 'انتخاب از محبوبها'
-);
-$args=array(
-	'label' => 'catGalery',
-	'labels' =>$labels,
-	'public' => true,
-	'show_in_nav_menus' => true,
-	'show_ui' => true,
-	'hierarchical' => true,
-	'query_var' => true,
+// $labels = array(
+//     'name'  => 'مجموعه گالری',
+//     'singular_name'  => 'مجموعه گالری ها',
+//     'search_items'  => 'جستجوی مجموعه گالری',
+//     'popular_items'  => 'بیشتر استفاده شده',
+//     'all_items'  => 'تمام مجموعه گالری',
+//     'parent_item'  => 'مادر مجموعه گالری',
+//     'edit_item'  => 'ویرایش مجموعه گالری',
+//     'update_item'  => 'بروزرسانی مجموعه گالری',
+//     'add_new_item'  => 'افزودن مجموعه گالری جدید',
+//     'new_item_name'    => 'مجموعه گالری جدید',
+//     'separate_items_with_commas'  => 'مجموعه گالری ها را با کاما جدا کنید',
+//     'add_or_remove_items'  => 'افزودن یا حذف مجموعه گالری',
+//     'choose_from_most_used'  => 'انتخاب از محبوبها'
+// );
+// $args=array(
+// 	'label' => 'catGalery',
+// 	'labels' =>$labels,
+// 	'public' => true,
+// 	'show_in_nav_menus' => true,
+// 	'show_ui' => true,
+// 	'hierarchical' => true,
+// 	'query_var' => true,
 	
 
-	);
-register_taxonomy('catGalery', array('gallery'), $args);
+// 	);
+// register_taxonomy('catGalery', array('gallery'), $args);
 /*_-_-_-_-Upload metabox_-_-_-_-*/ 
 add_action('post_edit_form_tag', 'update_edit_form'); 
 add_action('load-post.php', 'metabox_setup' );

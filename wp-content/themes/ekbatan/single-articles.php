@@ -45,7 +45,10 @@ wp_reset_postdata();
 
 		?></p>
 	</div>
+
 </section>
+
  <?php 
+comments_template();
 get_footer();
   ?>
