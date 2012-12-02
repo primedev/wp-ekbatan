@@ -39,6 +39,45 @@ function create_marketting_type(){
 		);
 	register_post_type('marketting', $args);
 }
+/*_-_-_-_-Comments post type_-_-_-_-*/ 
+add_action('init','create_coments_type');
+function create_coments_type(){
+	$labels=array(
+		'name' => 'ایده ها',
+		'singular_name' => 'ایده ها',
+		'add_new' => 'افزودن ایده',
+		'add_new_item' => 'افزودن ایده جدید',
+		'edit_item' => 'ویرایش ایده',
+		'new_item' => 'ایده جدید',
+		'view_item' => 'نمایش ایده',
+		'search_items' => 'جستجوی ایده',
+		'not_found' => 'ایده مورد نظر یافت نشد',
+		'not_found_in_trash' => 'ایده مورد نظر در زباله دان یافت نشد',
+		'parent_item_colon' => 'ایده',
+		'menu_name' => 'ایده ها'
+
+		);
+	$args=array(
+		'label' => 'ایده ها',
+		'labels' => $labels,
+		'public' => true,
+		'exclude_from_search' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_nav_menus' => true,
+		'show_in_menu' => true,
+		'menu_position' => 25,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array('title','editor','comments'),
+		'has_archive' => true,
+		'rewrite' => array('slug'=>'coments'),
+		'query_var' => true,
+		'can_export' => true
+		);
+	register_post_type('coments', $args);
+}
+
 /*_-_-_-_-Gallery post type_-_-_-_-*/ 
 add_action('init','create_gallery_type');
 function create_gallery_type(){
@@ -180,7 +219,7 @@ $args=array(
 	
 
 	);
-register_taxonomy('department', array('services','gallery','articles'), $args);
+register_taxonomy('department', array('services','gallery','articles','coments'), $args);
 /*_-_-_-_-Category taxonomy_-_-_-_-*/ 
 // $labels = array(
 //     'name'  => 'مجموعه گالری',
