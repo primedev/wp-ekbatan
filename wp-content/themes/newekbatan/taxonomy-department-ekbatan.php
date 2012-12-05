@@ -69,7 +69,8 @@ $_SESSION['term_slug']='ekbatan';
 		<div class="content">
 			<div class="txt">
 				<?php 
-					include "setgallery.php";
+					//include "setgallery.php";
+					get_template_part('gallery-ekbatan');
 				?>
 			</div>
 		</div>

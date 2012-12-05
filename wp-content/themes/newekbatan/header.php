@@ -7,7 +7,8 @@
 	<link href="<?php bloginfo('template_url'); ?>/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	<link href="<?php bloginfo('template_url'); ?>/style.less" rel="stylesheet/less" type="text/css" />
 	<link type="text/css"rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style-slide-top.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lightbox.css" />
 	
 	<script type="text/javascript">
 		document.write('<script type="text/javascript" src=scripts/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.js><\/script>');
