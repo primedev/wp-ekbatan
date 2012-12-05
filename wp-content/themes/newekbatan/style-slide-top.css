@@ -1,0 +1,76 @@
+div.pages{
+	width: 1100px;
+	margin:60px auto;
+}
+div.pages section.bigpart{
+	width:1000px;
+	margin-top: 0;
+	height: 542px;
+	border: 10px solid #B84432;
+}
+div.bigpic{
+	width: 5000px;
+	height: 300px;
+	right: 0;
+	top: 0;
+	-webkit-transition: right 300ms ease-in-out;
+	-moz-transition: right 300ms ease-in-out;
+	-o-transition: right 300ms ease-in-out;
+	-ms-transition: right 300ms ease-in-out;
+	transition: right 300ms ease-in-out;
+}
+div.bigpic > div{
+	width: 1000px;
+	height: 542px;
+	
+	background-size: contain;
+	background-repeat   : no-repeat;
+	background-position : center center;
+}
+div.pages section.smallpart{
+	width: 75px;
+	height: 435px;
+	margin: 80px 0 0;
+}
+section.smallpart ul.btn{
+	
+	width: 65px;
+	height: 420px;
+	right: 0;
+	padding-top: 10px;
+	transition: right 300ms ease-in-out;
+	-webkit-transition: right 300ms ease-in-out;
+	-moz-transition: right 300ms ease-in-out;
+	-o-transition: right 300ms ease-in-out;
+	-ms-transition: right 300ms ease-in-out;
+}
+section.smallpart ul.btn li{
+	width: 65px;
+	height: 125px;
+	border: solid #B84432;
+	border-width: 5px 0 5px 5px;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border-width: 5px;
+}
+section.smallpart ul.btn li:first-child{
+	border-width: 5px;
+}
+
+section.smallpart div.next{
+	background: url('images/image-setgallery/top.png') no-repeat;
+	width: 31px;
+	height:30px;
+	right:21px;
+	top:0px;
+	opacity: 0;
+}
+section.smallpart div.prev{
+	background: url('images/image-setgallery/down.png') no-repeat;
+	width: 32px;
+	height:30px;
+	right:21px;
+	top:400px;
+	opacity: 0;
+}
