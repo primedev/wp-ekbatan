@@ -16,11 +16,7 @@ $(function(){
 
 	function OpenMenu(){
 		openli=indexList/2;
-		if (openli == 2) {
-			hmenu = 470;
-		}else{
-			hmenu = 470;
-		};
+		hmenu = 470;
 		if (flagSpMarket) {
 			$('div.sp-marketing').css({
 				'display' : 'none',
@@ -53,6 +49,7 @@ $(function(){
 			CloseMenu(openli);	
 			if (current == indexList) {
 				flag = true;
+				current = -1;
 			}else{
 				flag = false;
 			}

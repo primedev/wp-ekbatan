@@ -34,9 +34,11 @@ $_SESSION['term_slug']='ekbatan';
 		</li>
 		<div class="content">
 			<div class="txt">
+				<section class="marketing">
 				<?php
 					include 'services.php';
 				 ?>
+				 </section>
 			</div>
 		</div>
 		<li>
