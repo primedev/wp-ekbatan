@@ -76,6 +76,8 @@
 				?>
 			</div>
 		</div>
+		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/script.js">
+	</script>
 <?php 
 
 get_template_part('generalbutton');

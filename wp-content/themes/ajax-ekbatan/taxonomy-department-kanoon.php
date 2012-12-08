@@ -82,3 +82,5 @@ get_template_part('generalbutton');
 //get_template_part('contact');
 // get_footer();
  ?>
+ <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/script.js">
+	</script>
