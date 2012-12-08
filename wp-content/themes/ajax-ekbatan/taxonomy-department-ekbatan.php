@@ -78,7 +78,7 @@
 		</div>
 <?php 
 
-get_template_part('general','button');
+get_template_part('generalbutton');
 
 //include 'contact.php';
 //get_footer();

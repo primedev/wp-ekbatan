@@ -2,7 +2,7 @@
 				<div class="header-bg">
 					<div class="header-txt cover">
 						<div class="header-icon">
-							<img src="<?php bloginfo('template_url'); ?>/images/market.png" alt="title" width="30" height="30" />
+							<img src="wp-content/themes/ekbatan/images/market.png" alt="title" width="30" height="30" />
 						</div>
 						<div class="header-title">تبلیغات</div>
 					</div>

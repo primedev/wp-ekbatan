@@ -32,7 +32,7 @@ $('ul.menu li#menu-item-57 div.buttonekbatan a').click(function(){
 			$('html, body').animate({
 				scrollTop: $(".main").offset().top
 			}, 1000);
-		$res2 = 'wp-content/themes/ekbatan/test1.php';
+		$res2 = 'wp-content/themes/ekbatan/generalbutton.php';
 		flagE = !flagE;
 	};
 		$.ajax({
@@ -56,7 +56,7 @@ $('ul.menu li#menu-item-56 div.buttonekbatan a').click(function(){
 		$('html, body').animate({
 			scrollTop: $(".main").offset().top
 		}, 1000);
-		$res2 = 'wp-content/themes/ekbatan/test1.php';
+		$res2 = 'wp-content/themes/ekbatan/generalbutton.php';
 		flagK = !flagK;
 	};
 	
