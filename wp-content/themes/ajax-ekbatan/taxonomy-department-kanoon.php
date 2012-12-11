@@ -1,10 +1,11 @@
 <?php
-// session_start();
+ session_start();
 // get_header();
 // include 'top.php';
-// $_SESSION['term_slug']='kanoon';
+ $_SESSION['term_slug']='kanoon';
 //include 'general-button.php';
  ?>
+ 		
  			<li>
 				<div class="header-bg">
 					<div class="header-txt cover">
@@ -71,7 +72,7 @@
 			<div class="content">
 				<div class="txt">
 					<?php 
-						//include "setgallery.php";
+						include "setgallery.php";
 					?>
 				</div>
 			</div>
@@ -82,5 +83,4 @@ get_template_part('generalbutton');
 //get_template_part('contact');
 // get_footer();
  ?>
- <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/script.js">
-	</script>
+ 

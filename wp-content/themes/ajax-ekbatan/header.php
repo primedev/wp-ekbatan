@@ -10,6 +10,10 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lightbox.css" />
 	
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/jquery.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/jquery-ui.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/lightbox.js"></script>
+
 	
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/jquery-1.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/cueslider.js"></script>
@@ -18,6 +22,10 @@
 	</script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/script.js">
 	</script>
+
+	
+
+
 	<!--[if IE]>
 		<script type="text/javascript" src="/scripts/html5.js"></script>
 	<![endif]-->

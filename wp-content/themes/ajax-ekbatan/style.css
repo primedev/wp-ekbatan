@@ -27,6 +27,7 @@ div.banner ul li{
 }
 div.banner ul li img{
 	display:block;
+	border:7px solid #B84432;
 	-webkit-transition:all 0.5s;
 	-moz-transition:all 0.5s;
 	-ms-transition:all 0.5s;

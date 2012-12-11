@@ -21,7 +21,7 @@ wp_reset_postdata();
 			</div>
 		</div>	
 	</a>
-	<a href="#">
+	<a class="nazar" >
 		<div class="ribbon2 cover">
 			<div class="ribbon-left2"></div>	
 			<div class="tab2"></div>
@@ -30,7 +30,7 @@ wp_reset_postdata();
 			</div>
 		</div>	
 	</a>
-	<a href="#">
+	<!-- <a href="#">
 		<div class="ribbon3 cover">
 			<div class="ribbon-left3"></div>	
 			<div class="tab3"></div>
@@ -38,7 +38,7 @@ wp_reset_postdata();
 			بازگشت
 			</div>
 		</div>	
-	</a>
+	</a> -->
 	<div class="shadow">
 		<p><?php 
 		the_content();
@@ -48,7 +48,12 @@ wp_reset_postdata();
 
 </section>
 
- <?php 
-comments_template();
-get_footer();
-  ?>
+<?php 
+	echo "<section class='comment-article'>";
+		echo "<div class='close-nazar'></div>";
+		echo "<div id='content-comment'>";
+		comments_template();
+		echo "</div>";
+	echo "</section>";
+	get_footer();
+?>
