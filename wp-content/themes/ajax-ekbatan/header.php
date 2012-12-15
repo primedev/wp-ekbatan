@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/slide-top.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/less.js">
 	</script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/faide.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/script.js">
 	</script>
 
