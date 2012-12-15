@@ -51,5 +51,7 @@
 	</section>
 	<div class="location-main-btn cover"></div>
 	<section id="button">
+		<div class="left time"> ق ظ 12:25:06 </div>
+		<div class="left date"> 2012/10/14 </div>
 		<ul id="main-menu">
 			<!-- <div class="ajax-content"> -->
