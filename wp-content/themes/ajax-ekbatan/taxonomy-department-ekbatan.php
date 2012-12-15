@@ -76,6 +76,7 @@ $_SESSION['term_slug']='ekbatan';
 				?>
 			</div>
 		</div>
+		
 <?php 
 
 get_template_part('generalbutton');
