@@ -2,15 +2,61 @@ $(function(){
 	var Nazar = $('section.content-article a.nazar'),
 	BtnCensus = $('div.census div.icon-census'),
 	flagCensus = false,
-		CloseNazar = $('section.comment-article div.close-nazar');
-	$('ul#main-menu').live("hover",function(){
+	flageMainmune = false,
+	CloseNazar = $('section.comment-article div.close-nazar');
+
+	//  AJAX
+
+animatteflag = false;
+$('ul#main-menu ').live("click",runmenu);
+$('ul.menu li.ekbatan  a').click(function(){
+	$res2 = $(this).attr('href');
+	if(flageMainmune){
+		$('ul.menu li.kanoon div').removeClass('change-icon').addClass('buttonekbatan');	
+	}
+	$('ul.menu li.ekbatan div').removeClass('buttonekbatan').addClass('change-icon');
+	$('body').animate({
+	 	 	scrollTop: $("div.location-main-btn").offset().top
+	 	 }, 1500);
+		$.ajax({
+		url : $res2,
+		success : function(data){
+			$("ul#main-menu").html(data);
+			 //$("ul#main-menu").fadeIn(3000) ;//kar nemikonad	
+			}
+		});
+		$('ul#main-menu ').live("click",runmenu);
+	flageMainmune = true;
+	return false;
+	
+	});
+
+$('ul.menu li.kanoon  a').click(function(){
+	$res2 = $(this).attr('href');
+	if (flageMainmune) {
+		$('ul.menu li.ekbatan div').removeClass('change-icon').addClass('buttonekbatan');		
+	};
+	$('ul.menu li.kanoon div').removeClass('buttonekbatan').addClass('change-icon');
+ 	$('body').animate({
+ 	 	scrollTop: $("div.location-main-btn").offset().top
+ 	 }, 1500);	
+	
+	$.ajax({
+		url : $res2,
+		success : function(data){
+			$("ul#main-menu").html(data);		
+		}
+	});
+	$('ul#main-menu ').live("click",runmenu);
+	flageMainmune = true;
+	return false;
+	});
+	// //end ajax
+	
+		function  runmenu(){
 	var ListMenu = $('section#button  ul#main-menu  > li '),
 		ContentList = $('section#button  ul#main-menu  div.content'),
-		
-		//BtnKanon = $('section.main div.buttonkanon'),
-		//BtnKanon = $('li#menu-item-56');
 		BtnEkbatan = $('section.main div.buttonekbatan'),
-		// ListSetGallery = $('div.banner ul li'),
 		LinkSpecialMarke = $('section.marketing a'),
 		BtnClose = $('div.sp-marketing a#fancy-close'),
 		
@@ -18,95 +64,7 @@ $(function(){
 		flagK = false,
 		flagE =false,
 		flagSpMarket = false,
-		
-		current = -1;
-
-
-//  AJAX
-
-
-$('ul.menu li.ekbatan div.buttonekbatan a').click(function(){
-	$res2 = $(this).attr('href');
-	// if (!flagE) {	
-	// 	$('html, body').animate({
-	// 		 	scrollTop: $("div.location-main-btn").offset().top
-	// 		}, 1500);	
-	// 		flagE = !flagE;
-	// 	}else{
-	// 		$('html, body').animate({
-	// 			scrollTop: $(".main").offset().top
-	// 		}, 1000);
-	// 	$res2 = 'wp-content/themes/ekbatan/generalbutton.php';
-	// 	flagE = !flagE;
-	// };
-		$.ajax({
-		url : $res2,
-		success : function(data){
-			$("ul#main-menu").html(data);
-			 $("ul#main-menu").fadeIn(3000) ;//kar nemikonad	
-			}
-		});
-	return false;
-	});
-
-$('ul.menu li.kanoon div.buttonekbatan a').click(function(){
-	$res2 = $(this).attr('href');
-	// if (!flagK) {
-	 	$('html, body').animate({
-	 	 	scrollTop: $("div.location-main-btn").offset().top
-	 	 }, 1500);	
-	// 	flagK = !flagK;
-	// }else{
-	// 	$('html, body').animate({
-	// 		scrollTop: $(".main").offset().top
-	// 	}, 1000);
-	// 	$res2 = 'wp-content/themes/ekbatan/generalbutton.php';
-	// 	flagK = !flagK;
-	// };
-	
-	$.ajax({
-		url : $res2,
-		success : function(data){
-			$("ul#main-menu").html(data);	
-			 $("ul#main-menu").fadeIn(800) ;//kar nemikone!	
-		}
-	});
-	return false;
-	});
-
-	// $('ul#main-menu li').click(function(){
-	// 	alert(1245);
-	// });
-	// var loadpage = function(url){
-	// 	url = url.length > 2 ? url.substr(1) : 'index.php';
-	// 	$('.ajax-content').load(url+' .ajax-content');
-	// }
-
-	// var pageUrl = window.location.href;
-	// sharPos = pageUrl.indexOf('#');
-	// if(sharPos){
-	// 	loadpage(pageUrl.substr(sharPos));
-	// 	pageUrl = pageUrl.substr(0,sharPos);
-	// }
-
-	// $('ul.menu li#menu-item-56 div.buttonekbatan a').click(function(){
-	// 	 var url = $(this).attr('href');
-	// 	 window.location.href = pageUrl + '#' + url;
-	// 	return false;
-	// });
-
-	// $('ul.menu li#menu-item-57 div.buttonekbatan a').click(function(){
-	// 	 var url = $(this).attr('href');
-	// 	 window.location.href = pageUrl + '#' + url;
-	// 	return false;
-	// });
-
-	// window.onhashchange = function(){
-	// 	loadpage(window.location.hash);
-
-	// }in code true!
-	// //end ajax
-
+			current = -1;
 	$('section.container-article article  p a').attr('target','_blank');
 	$('a.more-link').attr('target','_blank');
 	function OpenMenu(){
@@ -138,7 +96,7 @@ $('ul.menu li.kanoon div.buttonekbatan a').click(function(){
 		});
 	};
 
-	ListMenu.click(function(){
+ ListMenu.click(function (){
 		indexList = ($(this).index());
 		if (current != -1) {
 			CloseMenu(openli);	
@@ -149,15 +107,16 @@ $('ul.menu li.kanoon div.buttonekbatan a').click(function(){
 				flag = false;
 			}
 		};
-		if (!flag) {
+		if (!flag ) {
 			OpenMenu();	
 		}else{
 			CloseMenu(openli);
 		 	flag = false;
 		 	current = -1;
 		 }
-	});
-});
+		 $("ul#main-menu ").die();
+})	;
+};
 	/********** SEND IDEA IN PAGE SPECIAL ARTICLE***********/
 	Nazar.click(function(){
 		$('section.comment-article').css({
@@ -180,8 +139,7 @@ $('ul.menu li.kanoon div.buttonekbatan a').click(function(){
 		 	$(this).css({
 		 		'display':'none',
 		 	});
-		 });
-		
+		 });	
 	});
 	
 	/******************** MAIN MENU **************/
@@ -242,46 +200,6 @@ $('ul.menu li.kanoon div.buttonekbatan a').click(function(){
 		// $('html, body').animate({
 		// 	scrollTop: $("div.location-main-btn").offset().top
 		// }, 2000);
-	// });
-	/************ CLICK ON SET GALLERY *************/
-	// ListSetGallery.click(function(){
-	// 	window.open("gallery.php");
-	// });
-	/**************** FANCY  ****************/
-	// LinkSpecialMarke.click(function(){
-	// 	flagSpMarket = true;
-	// 	$('div.sp-marketing').css({
-	// 		'display' : 'block',
-	// 	}).animate({
-	// 		top : 60,
-	// 		right : 90
-	// 	},400);
-	// 	$('iframe#if-sp-marketing').animate({
-	// 		width :630,
-	// 		height : 430,
-	// 	},400);
-
-	// });
-
-	// BtnClose.click(function(){
-	// 	$('div.sp-marketing').animate({
-	// 		width : 0,
-	// 		height : 0 ,
-	// 		top : 320 ,
-	// 		right :250
-	// 	},500,'',function(){
-	// 		$('div.sp-marketing').css({
-	// 			'display' : 'none',
-	// 			width :630,
-	// 			height : 430,
-	// 			top : 220 ,
-	// 			right:290
-	// 		});	
-	// 		$('iframe#if-sp-marketing').css({
-	// 			width :0,
-	// 			height : 0,
-	// 		});
-	// 	});
 	// });
 	/****************** BtnCensus *************/
 	BtnCensus.click(function(){
