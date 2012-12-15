@@ -10,10 +10,20 @@
 				<h1>hello! i'm shihab
 					<img src="<?php bloginfo('template_url'); ?>/images/shihabs_registeredlogo_tm.png">
 				</h1>
-				<h2>a Freelance web/graphic Designer.</h2>
+				<h3>
+					اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان 
+				</h3>
+				<h3>
+					اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اک2222222222222222222222باتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان 
+				</h3>
+				<h3>
+					اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان ا3333333333333333333333333کباتان اکباتان اکباتان اکباتان اکباتان 
+				</h3>
+				<!-- <h2>a Freelance web/graphic Designer.</h2>
 				<h3>Thank you for discovering me. This website is the virtual home of mine. I always had the passion to be creative in some way and  wanted to pursue it.
-	        I figured, it was about time to see what i could do and find which avenue to take to be successful.</h3>	
+	        I figured, it was about time to see what i could do and find which avenue to take to be successful.</h3> -->	
 			</div>
+			
 			<div class="logo">
 				<h1>logo</h1>
 			</div>
