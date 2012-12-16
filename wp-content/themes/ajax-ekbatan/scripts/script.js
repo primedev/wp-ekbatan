@@ -9,23 +9,25 @@ $(function(){
 
 animatteflag = false;
 $('ul#main-menu ').live("click",runmenu);
+//setTimeout(runmenu,200);
 $('ul.menu li.ekbatan  a').click(function(){
 	$res2 = $(this).attr('href');
 	if(flageMainmune){
 		$('ul.menu li.kanoon div').removeClass('change-icon').addClass('buttonekbatan');	
 	}
 	$('ul.menu li.ekbatan div').removeClass('buttonekbatan').addClass('change-icon');
-	$('body').animate({
+	$('html ,body').animate({
 	 	 	scrollTop: $("div.location-main-btn").offset().top
 	 	 }, 1500);
 		$.ajax({
 		url : $res2,
 		success : function(data){
 			$("ul#main-menu").html(data);
-			 //$("ul#main-menu").fadeIn(3000) ;//kar nemikonad	
+			 //$("ul#main-menu").fadeIn(1000) ;//kar nemikonad	
 			}
 		});
 		$('ul#main-menu ').live("click",runmenu);
+		//setTimeout(runmenu,200);
 	flageMainmune = true;
 	return false;
 	
@@ -37,7 +39,7 @@ $('ul.menu li.kanoon  a').click(function(){
 		$('ul.menu li.ekbatan div').removeClass('change-icon').addClass('buttonekbatan');		
 	};
 	$('ul.menu li.kanoon div').removeClass('buttonekbatan').addClass('change-icon');
- 	$('body').animate({
+ 	$('html ,body').animate({
  	 	scrollTop: $("div.location-main-btn").offset().top
  	 }, 1500);	
 	
@@ -48,6 +50,7 @@ $('ul.menu li.kanoon  a').click(function(){
 		}
 	});
 	$('ul#main-menu ').live("click",runmenu);
+	//setTimeout(runmenu,200);
 	flageMainmune = true;
 	return false;
 	});
@@ -64,7 +67,7 @@ $('ul.menu li.kanoon  a').click(function(){
 		flagK = false,
 		flagE =false,
 		flagSpMarket = false,
-			current = -1;
+		current = -1;
 	$('section.container-article article  p a').attr('target','_blank');
 	$('a.more-link').attr('target','_blank');
 	function OpenMenu(){
@@ -205,10 +208,16 @@ $('ul.menu li.kanoon  a').click(function(){
 	BtnCensus.click(function(){
 		flagCensus = !flagCensus;
 		if (flagCensus) {
+			$('div.icon-up').css({
+				'display':'block',
+			});
 			$('div.census').animate({
 				top : 0,
 			},400);
 		}else{
+			$('div.icon-up').css({
+				'display':'none',
+			});
 			$('div.census').animate({
 				top : -60,
 			},400);
