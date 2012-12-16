@@ -5,11 +5,9 @@ $(function(){
 	flageMainmune = false,
 	CloseNazar = $('section.comment-article div.close-nazar');
 
-	//  AJAX
-
 animatteflag = false;
-$('ul#main-menu ').live("click",runmenu);
-//setTimeout(runmenu,200);
+//$('ul#main-menu ').live("click",runmenu);
+setTimeout(runmenu,200);
 $('ul.menu li.ekbatan  a').click(function(){
 	$res2 = $(this).attr('href');
 	if(flageMainmune){
@@ -17,21 +15,20 @@ $('ul.menu li.ekbatan  a').click(function(){
 	}
 	$('ul.menu li.ekbatan div').removeClass('buttonekbatan').addClass('change-icon');
 	$('html ,body').animate({
-	 	 	scrollTop: $("div.location-main-btn").offset().top
-	 	 }, 1500);
-		$.ajax({
+	 	scrollTop: $("div.location-main-btn").offset().top
+	}, 1500);
+	$.ajax({
 		url : $res2,
 		success : function(data){
 			$("ul#main-menu").html(data);
 			 //$("ul#main-menu").fadeIn(1000) ;//kar nemikonad	
-			}
-		});
-		$('ul#main-menu ').live("click",runmenu);
-		//setTimeout(runmenu,200);
-	flageMainmune = true;
-	return false;
-	
+		}
 	});
+	//$('ul#main-menu ').live("click",runmenu);
+	setTimeout(runmenu,2000);
+	flageMainmune = true;
+	return false;	
+});
 
 $('ul.menu li.kanoon  a').click(function(){
 	$res2 = $(this).attr('href');
@@ -41,7 +38,7 @@ $('ul.menu li.kanoon  a').click(function(){
 	$('ul.menu li.kanoon div').removeClass('buttonekbatan').addClass('change-icon');
  	$('html ,body').animate({
  	 	scrollTop: $("div.location-main-btn").offset().top
- 	 }, 1500);	
+ 	}, 1500);	
 	
 	$.ajax({
 		url : $res2,
@@ -49,14 +46,13 @@ $('ul.menu li.kanoon  a').click(function(){
 			$("ul#main-menu").html(data);		
 		}
 	});
-	$('ul#main-menu ').live("click",runmenu);
-	//setTimeout(runmenu,200);
+	//$('ul#main-menu ').live("click",runmenu);
+	setTimeout(runmenu,1000);
 	flageMainmune = true;
 	return false;
-	});
-	// //end ajax
+});
 	
-		function  runmenu(){
+function  runmenu(){
 	var ListMenu = $('section#button  ul#main-menu  > li '),
 		ContentList = $('section#button  ul#main-menu  div.content'),
 		BtnEkbatan = $('section.main div.buttonekbatan'),
@@ -117,8 +113,8 @@ $('ul.menu li.kanoon  a').click(function(){
 		 	flag = false;
 		 	current = -1;
 		 }
-		 $("ul#main-menu ").die();
-})	;
+		// $("ul#main-menu ").die();
+	});
 };
 	/********** SEND IDEA IN PAGE SPECIAL ARTICLE***********/
 	Nazar.click(function(){
@@ -145,65 +141,6 @@ $('ul.menu li.kanoon  a').click(function(){
 		 });	
 	});
 	
-	/******************** MAIN MENU **************/
-	// BtnKanon.click(function(){
-		
-	// 	flagKanon = !flagKanon;
-	// 	$(this).removeClass('buttonkanon').addClass('change-icon');
-	// 	BtnEkbatan.removeClass('change-icon').addClass('buttonekbatan');
-	// 	if (flagKanon) {
-	// 		$('section#button').css({
-	// 			'display': 'block',
-	// 		});
-	// 		$('section#end').css({
-	// 			'display': 'block',
-	// 		});
-	// 	}else{
-	// 		$('html, body').animate({
-	// 			// scrollTop: $(".main").offset().top
-	// 		}, 10 ,'',function(){
-	// 			$('section#button').css({
-	// 				'display': 'none',
-	// 			});
-	// 			$('section#end').css({
-	// 				'display': 'none',
-	// 			});
-	// 			BtnKanon.removeClass('change-icon').addClass('buttonkanon');
-	// 		});
-	// 	};
-	// 	 $('html, body').animate({
-	// 	 	scrollTop: $("div.location-main-btn").offset().top
-	// 	 }, 2000);
-	// });
-
-	// BtnEkbatan.click(function(){
-	// 	flagEkbatan = !flagEkbatan;
-	// 	$(this).removeClass('buttonekbatan').addClass('change-icon');
-	// 	BtnKanon.removeClass('change-icon').addClass('buttonkanon');
-	// 	if (flagEkbatan) {
-	// 		$('section#button').css({
-	// 			'display': 'block',
-	// 		});
-	// 		$('section#end').css({
-	// 			'display': 'block',
-	// 		});
-	// 	}else{
-	// 		$('html, body').animate({
-	// 			//scrollTop: $(".main").offset().top
-	// 		}, 1000 ,'',function(){
-	// 			$('section#button').css({
-	// 				'display': 'none',
-	// 			});
-	// 			$('section#end').css({
-	// 				'display': 'none',
-	// 			});
-	// 			BtnEkbatan.removeClass('change-icon').addClass('buttonekbatan');
-	// 		});
-	// 	}
-		// $('html, body').animate({
-		// 	scrollTop: $("div.location-main-btn").offset().top
-		// }, 2000);
-	// });
 	/****************** BtnCensus *************/
 	BtnCensus.click(function(){
 		flagCensus = !flagCensus;
