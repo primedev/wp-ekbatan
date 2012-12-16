@@ -3,7 +3,9 @@
 			<div class="content-census">
 				hello hello hello hello hello hello hello hello hello hello 
 			</div>
-			<div class="icon-census"></div>
+			<div class="icon-census">
+				<div class="icon-up"></div>
+			</div>
 		</div>
 		<div class="main-txt">
 			<div class="fade-txt w11 left">
@@ -18,10 +20,7 @@
 				</h3>
 				<h3>
 					اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان اکباتان ا3333333333333333333333333کباتان اکباتان اکباتان اکباتان اکباتان 
-				</h3>
-				<!-- <h2>a Freelance web/graphic Designer.</h2>
-				<h3>Thank you for discovering me. This website is the virtual home of mine. I always had the passion to be creative in some way and  wanted to pursue it.
-	        I figured, it was about time to see what i could do and find which avenue to take to be successful.</h3> -->	
+				</h3>	
 			</div>
 			
 			<div class="logo">
